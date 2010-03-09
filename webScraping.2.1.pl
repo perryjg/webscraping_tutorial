@@ -5,7 +5,7 @@ use WWW::Mechanize;
 use HTML::TableExtract;
 
 #my $output_file = 'c:/temp/ire/car_people.csv';
-my $starting_url = 'http://bolles.ire.org/dij/';
+my $starting_url = 'http://www.ire.org/dij/';
 
 my $ua = WWW::Mechanize->new;
 $ua->get( $starting_url );
@@ -28,9 +28,9 @@ for my $table ( $te->tables ) {
     }
     
     print $data{ 'Name:' }, ",",
-              $data{ 'Affiliation:' }, ",",
-              $data{ 'Address:' }, ",",
-              $data{ 'Phone:' }, ",",
-              $data{ 'Interests:' }, "\n";
+          $data{ 'Affiliation:' }, ",",
+          $data{ 'Address:' }, ",",
+          $data{ 'Phone:' }, ",",
+          $data{ 'Interests:' }, "\n";
 }
 #close OUT 

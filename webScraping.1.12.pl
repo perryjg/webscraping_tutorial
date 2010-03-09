@@ -25,11 +25,12 @@ close (FILE);
 
 #what if you want to open a web page? Need to use a module.
 
+#open my $fh, '>/home/john/tmp/ownrate.html' or die "$!";
+
 my $url = 'http://www.census.gov/hhes/www/housing/census/historic/ownrate.html';
-getstore( $url, 'c:/temp/myPage.html' );
+print getstore( $url, 'c:/temp/ownrate.html' );
 
-
-open (INFILE ,"<", "c:/temp/myPage.html");
+open (INFILE ,"<", "c:/temp/ownrate.html") or die "$!";
 
 
 
