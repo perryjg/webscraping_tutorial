@@ -6,16 +6,13 @@ require 'date'
 require 'time'
 require 'logger'
 require 'dbi'
-require 'singleton'
 
 class VoteScraper
-  include Singleton
-  
   def self.scrape( house )
     ##### establish DB connection ##############################################
-    dbh = DBI.connect( "DBI:Mysql:newsroom_datawarehouse:fcp-intradevsql1",
-                       "nrdw_a",
-                       "12Store21" )
+    dbh = DBI.connect( "DBI:Mysql:newsroom_datawarehouse:__host__",
+                       "__user_name__",
+                       "__password__" )
     
     @insert_sql = 'INSERT IGNORE INTO legis_votes_master_test
                    ( vote_id, house, date, type, num, description, yea, nay, not_voting, excused )
